@@ -8,6 +8,7 @@ bazel-docs
 bazel-out
 bazel-testlogs
 bazel-*
+.bazelbsp
 .ijwb
 .idea
 *.iml
