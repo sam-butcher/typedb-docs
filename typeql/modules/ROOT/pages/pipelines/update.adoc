@@ -10,7 +10,7 @@ The body of an update stage is a sequence of update statements, which are simila
 
 [,typeql]
 ----
-insert <update-statement> [ <update-statement> ... ]
+update <update-statement> [ <update-statement> ... ]
 ----
 
 == Behavior
