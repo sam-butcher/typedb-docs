@@ -113,7 +113,7 @@ It is especially noticeable in queries updating multiple things.
 For example, swapping role players after a mistaken insertion.
 
 [,typeql]
-.
+.Using an update stage to swap role players
 ----
 match
   $p isa parentship (parent: $x, child: $y);
