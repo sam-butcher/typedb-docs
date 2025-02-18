@@ -17,6 +17,11 @@
 ** xref:{page-component-version}@manual::configure/server.adoc[]
 ** xref:{page-component-version}@manual::configure/encryption.adoc[]
 
+* xref:{page-component-version}@manual::cloud/index.adoc[]
+** xref:{page-component-version}@manual::cloud/quickstart.adoc[Quickstart]
+** xref:{page-component-version}@manual::cloud/api/index.adoc[Administration API]
+** xref:{page-component-version}@manual::cloud/api/reference.adoc[API Reference]
+
 * xref:{page-component-version}@manual::connect/index.adoc[Connecting]
 ** xref:{page-component-version}@manual::connect/cloud.adoc[]
 ** xref:{page-component-version}@manual::connect/enterprise.adoc[]
