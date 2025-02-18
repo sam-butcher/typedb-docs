@@ -277,21 +277,24 @@ Additionally, let's use a TypeDB function called `all_relatives` that we previou
 include::{page-version}@drivers::partial$tutorials/python/sample.py[tag=match-function]
 ----
 
-// TODO: Rewrite this once update stages are introduced
 [#_update]
 === Update query
 
 Let's replace a `phone` of one of the `user` s by a new one.
-We can do that by deleting ownership of the old path attribute from the file entity and assigning it with ownership of the new path attribute:
+The fastest way is to use an `update` stage, which replaces the old data with the specified values:
 
 [,python]
 ----
 include::{page-version}@drivers::partial$tutorials/python/sample.py[tag=update]
 ----
 
-Here, you can notice how both `delete` and `insert` pipeline stages reuse the same variable from the first `match` stage.
-Executing both write stages in a single transaction isolates these changes from other transactions: there won't be any point of time for other TypeDB users where they won't see a `user` s `phone`.
+We could also do that by deleting ownership of the old path attribute from the file entity and assigning it with ownership of the new path attribute manually by writing consecutive `delete` and `insert` pipeline stages.
+
+[NOTE]
+====
+Executing multiple write stages in a single transaction isolates these changes from other transactions: there won't be any point of time for other TypeDB users where they won't see a `user` s `phone`.
 Moreover, if any other transaction makes a conflicting change before we commit this transaction, then our transaction fails upon a commit.
+====
 
 [#_delete]
 === Delete query

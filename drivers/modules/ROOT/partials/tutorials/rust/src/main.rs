@@ -158,8 +158,7 @@ async fn update_phone_by_email(
     let rows = tx
         .query(&format!(
             "match $u isa user, has email '{email}', has phone $phone; $phone == '{old_phone}';
-            delete $phone of $u;
-            insert $u has phone '{new_phone}';",
+            update $u has phone '{new_phone}';",
         ))
         .await?
         .into_rows()
