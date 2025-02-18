@@ -108,6 +108,19 @@ update
   $gm links ($g);
 ----
 
+As already mentioned, update stages are useful to write shorter queries.
+It is especially noticeable in queries updating multiple things.
+For example, swapping role players after a mistaken insertion.
+
+[,typeql]
+.
+----
+match
+  $p isa parentship (parent: $x, child: $y);
+update
+  $p links (parent: $y, child: $x);
+----
+
 == Update stage answers
 
 An update stage does not modify the input variables from the previous stages.
