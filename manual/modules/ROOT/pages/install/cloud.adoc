@@ -1,6 +1,7 @@
 = TypeDB Cloud
 :page-aliases: {page-version}@home::install/cloud.adoc
 
+// tag::content[]
 TypeDB runs as a service in TypeDB Cloud, our platform for automatically deploying TypeDB onto the cloud provider of your choice.
 
 == Deploying a cluster
@@ -22,3 +23,4 @@ Make sure to save this password somewhere safe, as you will need it to access yo
 
 Once your password is set, information on connecting to TypeDB can be found on that page or in the
 xref:{page-version}@manual::connect/cloud.adoc[dedicated documentation].
+// end::content[]

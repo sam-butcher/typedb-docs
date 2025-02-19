@@ -193,8 +193,7 @@ def update_phone_by_email(driver, db_name, email, old, new):
     with driver.transaction(db_name, TransactionType.WRITE) as tx:
         answers = list(tx.query(f"""
           match $u isa user, has email '{email}', has phone $phone; $phone == '{old}';
-          delete $phone of $u;
-          insert $u has phone '{new}';
+          update $u has phone '{new}';
         """).resolve().as_concept_rows())
         tx.commit()
         answers_len = len(answers)

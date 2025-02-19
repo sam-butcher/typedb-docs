@@ -200,8 +200,7 @@ public class Main {
         try (Transaction tx = driver.transaction(dbName, Transaction.Type.WRITE)) {
             String query = String.format(
                     "match $u isa user, has email '%s', has phone $phone; $phone == '%s';" +
-                            "delete $phone of $u;" +
-                            "insert $u has phone '%s';",
+                            "update $u has phone '%s';",
                     email, oldPhone, newPhone);
             rows = tx.query(query).resolve().asConceptRows().stream().collect(Collectors.toList());
             tx.commit();

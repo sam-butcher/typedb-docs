@@ -121,7 +121,7 @@ However, if you <<_email_deletion, delete the `email` itself>>:
    ------------
 ----
 
-== Preserving or reverting changes
+== Committing
 
 include::{page-version}@manual::page$CRUD/inserting.adoc[tag=preserving-reverting-changes]
 

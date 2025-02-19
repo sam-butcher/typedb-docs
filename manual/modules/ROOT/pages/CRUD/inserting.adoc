@@ -75,7 +75,7 @@ If the `username` attribute `"User"` does not yet exist when running the above, 
 [[links]]
 === Inserting role players with `links`
 
-Connections of relations to their "`role players`" data instance can be created using `links` statements
+Connections of relations to their "`role players`" data instances can be created using `links` statements.
 
 [,typeql]
 .Inserting users, a friendship, and links between users via that friendship
@@ -117,7 +117,7 @@ The first stage of the pipeline retrieves the users called `"Bob"` from the data
 
 See the xref:{page-version}@typeql::pipelines/index.adoc[data pipeline reference] for more information.
 
-== Insert stage anwers
+== Insert stage answers
 
 An insert stage returns all concepts inserted into the database as a stream of concept rows.
 A collected stream of concept rows can be interpreted as a table with a header containing variables and rows with respective concept answers for each variable.
