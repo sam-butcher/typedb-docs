@@ -145,7 +145,7 @@ curl::
 curl --request POST \
     --url https://cloud.typedb.com/api/org/ORG_ID/projects/PROJECT_ID/clusters/deploy \
     --header 'Authorization: Bearer {ACCESS-TOKEN}' \
-    --json '{"id":"api-cluster","serverCount":1,"storageSizeGB":10,"provider":"gcp","region":"europe-west2","isFree":true,"machineType":"c2d-highcpu-2","storageType":"standard-rwo","version":"3.0.5"}'
+    --json '{"id":"api-cluster","serverCount":1,"storageSizeGB":10,"provider":"gcp","region":"europe-west2","isFree":true,"machineType":"c2d-highcpu-2","storageType":"standard-rwo","version":"3.0.6"}'
 ----
 
 Python::
@@ -169,7 +169,7 @@ body = {
     "isFree": True,
     "machineType": "c2d-highcpu-2",
     "storageType": "standard-rwo",
-    "version": "3.0.5"
+    "version": "3.0.6"
 }
 
 response = requests.post(url, headers=headers, json=body)
@@ -206,7 +206,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         isFree: true,
         machineType: "c2d-highcpu-2".into(),
         storageType: "standard-rwo".into(),
-        version: "3.0.5".into()
+        version: "3.0.6".into()
     };
     let client = reqwest::Client::new();
     let resp = client
@@ -231,7 +231,7 @@ Request Body::
     "isFree":true,
     "machineType":"c2d-highcpu-2",
     "storageType":"standard-rwo",
-    "version":"3.0.5"
+    "version":"3.0.6"
 }
 ----
 ====
@@ -248,7 +248,7 @@ Request Body::
     "createdAt":1738256490070,
     "organizationID":"new-organization",
     "projectID":"default",
-    "version":"3.0.5",
+    "version":"3.0.6",
     "provider":"gcp",
     "region":"europe-west2",
     "machineType":"c2d-highcpu-2",
@@ -281,7 +281,7 @@ If set to `false`, there must be a valid payment method on the organization.
 | `version` a| Currently available versions are:
 
 * `2.29.3`
-* `3.0.5`
+* `3.0.6`
 |===
 
 [#regionsmachinetypes]
@@ -456,7 +456,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "createdAt":1738256490070,
     "organizationID":"new-organization",
     "projectID":"default",
-    "version":"3.0.5",
+    "version":"3.0.6",
     "provider":"gcp",
     "region":"europe-west2",
     "machineType":"c2d-highcpu-2",
@@ -544,7 +544,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "createdAt":1738256490070,
         "organizationID":"new-organization",
         "projectID":"default",
-        "version":"3.0.5",
+        "version":"3.0.6",
         "provider":"gcp",
         "region":"europe-west2",
         "machineType":"c2d-highcpu-2",
@@ -565,7 +565,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "createdAt":1738256490090,
         "organizationID":"new-organization",
         "projectID":"default",
-        "version":"3.0.5",
+        "version":"3.0.6",
         "provider":"aws",
         "region":"eu-west-2",
         "machineType":"c7g.large",
@@ -649,7 +649,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "createdAt":1738256490070,
     "organizationID":"new-organization",
     "projectID":"default",
-    "version":"3.0.5",
+    "version":"3.0.6",
     "provider":"gcp",
     "region":"europe-west2",
     "machineType":"c2d-highcpu-2",
@@ -736,7 +736,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "createdAt":1738256490070,
     "organizationID":"new-organization",
     "projectID":"default",
-    "version":"3.0.5",
+    "version":"3.0.6",
     "provider":"gcp",
     "region":"europe-west2",
     "machineType":"c2d-highcpu-2",
@@ -823,7 +823,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     "createdAt":1738256490070,
     "organizationID":"new-organization",
     "projectID":"default",
-    "version":"3.0.5",
+    "version":"3.0.6",
     "provider":"gcp",
     "region":"europe-west2",
     "machineType":"c2d-highcpu-2",
