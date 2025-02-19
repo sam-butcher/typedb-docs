@@ -4,6 +4,10 @@
 :test-tql-entry: schema_start
 :test-python: yes
 :test-rust: yes
+:keywords: typedb, typeql, clients, documentation, overview
+:pageTitle: Crash course
+:page-aliases: {page-version}@home::crash-course/overview.adoc
+:summary: A 15-minute crash course on using TypeDB
 
 TypeDB brings together powerful programming concepts with the features and performance of modern database systems. We believe the result is a novel database experience - and after taking this 15-minute crash course, we hope you'll agree.
 
