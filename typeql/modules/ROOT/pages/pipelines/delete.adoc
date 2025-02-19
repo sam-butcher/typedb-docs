@@ -21,7 +21,7 @@ delete ( <variable> | has <variable> of <variable> | links ( <variable> [ , ... 
 
 == Execution
 
-The delete stage must be preceded by other stages. The body of the delete clause is executed once for each input row. The output is then a
+The delete stage must be preceded by other stages. The body of the delete stage is executed once for each input row. The output is then a
 stream of input rows with the deleted concepts removed.
 
 == Example
