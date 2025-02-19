@@ -78,7 +78,7 @@ include::{page-version}@manual:resources:partial$cloud-api/error-response.json.a
 // end::404[]
 
 // tag::409[]
-.409: Not Found
+.409: Conflict
 [%collapsible]
 ====
 Possible causes:
