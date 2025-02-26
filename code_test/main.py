@@ -3,24 +3,24 @@ import logging
 import sys
 import os
 from typing import Dict, List, Optional
-from code_test.parser.parser import parse_programs
+from code_test.parser.parser import Parser, ParsedTest
 
 # Logging config
 logger = logging.getLogger('main')
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,  # set to logging.DEBUG for debugging
                     format="%(asctime)s: %(message)s",
                     datefmt="%Y-%m-%d %H:%M:%S")
 
 
 # Directories to code test
-DIRECTORIES = [
+MODULE_DIRECTORIES = {
     # os.path.join(os.path.dirname(__file__), "tests"),
-    os.path.join(os.path.dirname(__file__), "../home/modules/ROOT/pages"),
-    os.path.join(os.path.dirname(__file__), "../manual/modules/ROOT/pages"),
-    os.path.join(os.path.dirname(__file__), "../typeql/modules/ROOT/pages"),
-    os.path.join(os.path.dirname(__file__), "../drivers/modules/ROOT/pages"),
-    os.path.join(os.path.dirname(__file__), "../academy/modules/ROOT/pages")
-]
+    "home": os.path.join(os.path.dirname(__file__), "../home/modules/ROOT"),
+    "manual": os.path.join(os.path.dirname(__file__), "../manual/modules/ROOT"),
+    "typeql": os.path.join(os.path.dirname(__file__), "../typeql/modules/ROOT"),
+    "drivers": os.path.join(os.path.dirname(__file__), "../drivers/modules/ROOT"),
+    "academy": os.path.join(os.path.dirname(__file__), "../academy/modules/ROOT")
+}
 
 
 def parse_adoc_config(adoc_path: str, key_names: List[str]) -> Dict[str, Optional[str]]:
@@ -42,10 +42,12 @@ def parse_adoc_config(adoc_path: str, key_names: List[str]) -> Dict[str, Optiona
     return adoc_config
 
 
-def test_programs_in_file(runner, lang: str, adoc_path: str, adoc_config: Dict[str, Optional[str]]):
+def try_tests_in_file(runner, lang: str, adoc_path: str, adoc_config: Dict[str, Optional[str]]):
     try:
-        parsed_programs = parse_programs(adoc_path, lang)
-        runner.test_programs(parsed_programs, adoc_path, adoc_config)
+        parser = Parser(adoc_path, lang)
+        parsed_tests = parser.parse_tests()
+        logging.debug("Found tests:\n" + "\n\n".join([f"#{i+1}: {test}" for (i,test) in enumerate(parsed_tests)]))
+        runner.try_tests(parsed_tests, adoc_path, adoc_config)
         logger.info(f"RESULTS: {runner.success_count} SUCCESSFUL, {runner.failure_count} FAILED")
         return runner.failure_count == 0
     except Exception as e:
@@ -56,7 +58,7 @@ def test_programs_in_file(runner, lang: str, adoc_path: str, adoc_config: Dict[s
 def test_one_file(runner, lang: str, adoc_path: str):
     adoc_config = parse_adoc_config(adoc_path, runner.adoc_keys)
     if runner.check_config(adoc_config):
-        test_programs_in_file(runner, lang, adoc_path, adoc_config)
+        try_tests_in_file(runner, lang, adoc_path, adoc_config)
     else:
         logger.info(f"[{adoc_path}]: Bad adoc attributes in file.")
 
@@ -64,8 +66,8 @@ def test_one_file(runner, lang: str, adoc_path: str):
 def test_all_files(runner, lang: str):
     files_with_failures = []
     files_tested_counter = 0
-    for directory in DIRECTORIES:
-        for root, _, files in os.walk(directory):
+    for directory in MODULE_DIRECTORIES.values():
+        for root, _, files in os.walk(directory + "/pages"):
             for file in files:
                 if file.endswith(".adoc"):
                     adoc_path = os.path.relpath(os.path.join(root, file))
@@ -73,7 +75,7 @@ def test_all_files(runner, lang: str):
                     if adoc_config[runner.adoc_keys[0]] is not None:
                         if runner.check_config(adoc_config):
                             logger.info(f"TESTING FILE {adoc_path}")
-                            if not test_programs_in_file(runner, lang, adoc_path, adoc_config):
+                            if not try_tests_in_file(runner, lang, adoc_path, adoc_config):
                                 files_with_failures.append(adoc_path)
                             files_tested_counter += 1
                         else:
@@ -84,7 +86,7 @@ def test_all_files(runner, lang: str):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python parse_code_test.py <lang> [<path-to-file>]\n(lang can be 'tql', 'rust', 'python')")
+        print("Usage: python -m code_test.main <lang> [<path-to-file>]")
         sys.exit(1)
 
     lang = sys.argv[1]
