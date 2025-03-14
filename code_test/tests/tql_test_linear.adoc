@@ -1,61 +1,57 @@
 = Crash course
 :title: Crash Course
-:test-tql: linear
-:test-tql-entry: 0
+:test-typeql: linear
 
-//!program[lang=tql, type=schema]
-//!++
-////
-define entity being;
-////
-//!--
-//!run
-
-//!program[lang=tql, type=schema]
-//!++
 [,typeql]
 ----
-define
+#!test[schema]
+#{{
+define attribute name, value string;
+#}}
+#{{
+define entity person, owns name;
+#}}
+#!test[write]
+#{{
+insert
+  $p isa person, has name "Peter";
+  $q isa person, has name "Quip";
+#}}
+#!test[write, rollback]
+#{{
+insert
+  $p isa person, has name "Peter2";
+  $q isa person, has name "Quip2";
+#}}
+#!test[read]
+# Regular comment
+match
+ $a isa person;
+#---
+match
+ $n isa name;
+#!test[read, count=2]
+#{{
+match
+ $a isa person;
+ { $a has name "Peter"; }
+ or { $a has name "Quip"; };
+#}}
+----
+
+This will not be executed as it has no `#!test` marker.
+
+[,typeql]
+----
   entity person owns username;
-  attribute username, value string;
 ----
-//!--
-The next query is the same as the first but uses snippets to hide code from the user.
-//!++
-////
-define
-////
+
 [,typeql]
 ----
-  entity person owns username;
+#!test[write, fail_at=runtime]
+insert
+  $p isa person, has name 11;
+#!test[read, count=1]
+match
+  $type owns name;
 ----
-////
-  attribute username, value string;
-////
-Some text in between, before the example continues:
-[,typeql]
-----
-  attribute status, value string
-----
-//!--
-//!run
-
-This is a rust program
-
-
-//!program[lang=rust, attr=sth]
-//!++
-////
-use std::mem::increase_to_infinity;
-////
-//!--
-//!run
-
-
-//!program[lang=tql, type=schema]
-//!++
-////
-define entity universe;
-////
-//!--
-//!run
