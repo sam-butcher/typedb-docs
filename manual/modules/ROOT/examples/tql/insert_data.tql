@@ -1,3 +1,4 @@
+// tag::simple-insert[]
 // tag::insert-keyword[]
 insert
 // end::insert-keyword[]
@@ -10,3 +11,4 @@ insert
   $b isa user, has username "Bob", has email "bob@typedb.com";
   friendship (friend: $a, friend: $b);
 // end::insert-users-friendship[]
+// end::simple-insert[]
