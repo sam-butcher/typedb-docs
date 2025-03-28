@@ -8,6 +8,13 @@
 :page-preamble-card: 1
 :page-aliases: {page-version}@manual::console.adoc
 
+[NOTE]
+====
+TypeDB Console 3.1 release candidates are now available, written in Rust! You can view the changes in https://github.com/typedb/typedb-console/releases[GitHub releases,window=_blank] and join the discussion on our Discord https://typedb.com/discord[chat server,window=_blank].
+
+This documentation page is for TypeDB Console 3.0.
+====
+
 // tag::body[]
 [.float-group]
 --
