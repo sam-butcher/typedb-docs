@@ -42,7 +42,10 @@ See the Console's downloadable packages.
 If using versions previous to 3.1.0, you will need to install Java 11+.
 =====
 
-For installation instructions, follow the steps below for your OS:
+If you are using a distribution of TypeDB CE (TypeDB server), you may already have TypeDB Console included and can skip this step!
+To verify, just run `typedb --help`.
+
+For installation instructions of only the Console distribution, follow the steps below for your OS:
 
 [tabs]
 ====
@@ -354,12 +357,12 @@ transaction read test
 database delete test
 ----
 
-Execute the script with TypeDB Console:
+Execute the script with TypeDB Console non-interactively:
 
 .Run script.tqls
 [source,bash]
 ----
-typedb console --username=<username> --password --script=<PATH/script.tqls>
+typedb console --username=<username> --password=<password> --script=<PATH/script.tqls>
 ----
 
 Where `<PATH/script.tqls>` is the path to the file and the filename.
@@ -648,8 +651,8 @@ Use these commands at the <<_server_level,Server level>> of TypeDB's <<_REPL,REP
 // | Print the schema of the database with the name `<db>` on the server
 
 2+^| User management
-| `user list`
-| List all users on the server. +
+// | `user list`
+// | List all users on the server. +
 
 | `user create <username> [password]`
 | Create a user with the name `<username>` on the server. When the password is omitted, it will be safely requested from the user. +
@@ -662,7 +665,7 @@ Set password for the user with the name `username`. When the new password is omi
 | Delete a user with the name `<username>` on the server. +
 
 2+^| Open a transaction
-| `transaction <db> read⎮write⎮schema [options]`
+| `transaction read⎮write⎮schema <db> [options]`
 | Start a transaction to the database with the name `<db>` with a chosen transaction type.
 You can set <<_transaction_options,transaction options>>.
 
