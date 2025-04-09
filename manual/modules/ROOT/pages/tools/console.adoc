@@ -1,12 +1,11 @@
 = TypeDB Console
-
+:page-aliases: {page-version}@manual::console.adoc
 :keywords: typedb, console, CLI, terminal, REPL
 :pageTitle: TypeDB Console manual
 :summary: TypeDB Console documentation.
 :tabs-sync-option:
 :experimental:
 :page-preamble-card: 1
-:page-aliases: {page-version}@manual::console.adoc
 
 // tag::body[]
 [.float-group]
