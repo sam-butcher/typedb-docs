@@ -7,6 +7,10 @@ TypeDB transactions come in 3 flavors: *read*, *write*, and *schema* transaction
 
 TypeDB transactions provide *ACID guarantees* up to snapshot isolation.
 
+All transactions that can do writes in TypeDB are __stateful__: queries that mutate the schema or data
+have their changes buffered and are accessible to following queries in the transaction. After a commit,
+the changes are merged into the global database state and made accessibly to new transactions.
+
 == Read transactions
 
 Read transactions can execute only read queries, and will error when provided data update queries or schema mutation queries.
@@ -159,5 +163,11 @@ transaction.commit();
 ----
 
 if you want to commit changes.
+--
+
+HTTP::
++
+--
+Refer to xref:{page-version}@drivers::http/index.adoc#_run_queries[Running queries through HTTP endpoint].
 --
 ====
