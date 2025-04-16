@@ -43,6 +43,7 @@ typedb server --server.address=0.0.0.0:1730
 
 See the respective section of <<_command_line_arguments>> below for details.
 
+[#_encryption]
 ==== Encryption
 
 If encryption is required, but there are no certificate authorities available on the machine, refer to xref:{page-version}@manual::configure/encryption.adoc[] for encryption certification recommendations.
@@ -141,6 +142,18 @@ The following arguments can be used for TypeDB configuration:
 | `--server.address=<SERVER_ADDRESS>`
 |
 | Server host and port. Default value: `0.0.0.0:1729`. +
+
+| `--server.http.enable=<BOOL>`
+|
+| Enable/disable HTTP endpoint. Default value: `true`. +
+
+| `--server.http.address=<SERVER_ADDRESS>`
+|
+| HTTP endpoint host and port. Cannot be the same as `server.address`. Default value: `0.0.0.0:8000`. +
+
+| `--server.authentication.token_ttl_seconds=<SERVER_ADDRESS>`
+|
+| The amount of seconds generated authentication tokens will remain valid, specified in seconds. Default value: `14400` (4 hours). +
 
 | `--server.encryption.enabled`
 |
