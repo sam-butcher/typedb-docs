@@ -1,5 +1,7 @@
 = Creating databases
 
+A TypeDB database is an isolated data store comprising its own schema and dataset. All TypeDB data is stored in a database.
+
 == From clients
 
 To create a new database, connect to TypeDB and follow the steps below:
