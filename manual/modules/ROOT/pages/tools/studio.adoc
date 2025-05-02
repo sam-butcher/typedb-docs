@@ -6,6 +6,13 @@
 :experimental:
 :page-preamble-card: 1
 
+[NOTE]
+====
+If you're using TypeDB Community Edition >=3.2.0-rc1, you can access the new TypeDB Studio experience at https://studio.typedb.com! Desktop builds will be published soon.
+
+Otherwise, read this article for the legacy versions of TypeDB Studio.
+====
+
 [.float-group]
 --
 image::{page-version}@drivers::studio/studio.png[TypeDB Studio hero image, role="right", width = 50%, window=_blank, link=self]

@@ -162,6 +162,13 @@ For a complete usage guide, visit the xref:{page-version}@manual::tools/console.
 
 TypeDB Studio is a powerful GUI tool that facilitates development on TypeDB.
 
+[NOTE]
+====
+If you're using TypeDB Community Edition >=3.2.0-rc1, you can access the new TypeDB Studio experience at https://studio.typedb.com! Desktop builds will be published soon.
+
+Otherwise, see the below installation instructions for the legacy versions of TypeDB Studio.
+====
+
 === Installation
 
 [tabs]
