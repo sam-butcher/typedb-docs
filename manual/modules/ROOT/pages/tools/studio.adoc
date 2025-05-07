@@ -16,22 +16,22 @@ all within a unified environment.
 
 [cols-2]
 --
-.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
-[.clickable]
-****
-The GitHub repository with the source code and release notes.
-****
-
 .https://studio.typedb.com[Open TypeDB Studio]
 [.clickable]
 ****
 Launch TypeDB Studio directly from your web browser.
 ****
+
+.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
+[.clickable]
+****
+The GitHub repository with the source code and release notes.
+****
 --
 
 [NOTE]
 ====
-Desktop builds will be published soon, powered by https://tauri.dev[Tauri].
+Desktop builds will be published soon, powered by https://tauri.app[Tauri].
 ====
 
 == Quickstart
