@@ -12,10 +12,20 @@ TypeDB brings together powerful programming concepts with the features and perfo
 
 Before we get started, ensure that xref:{page-version}@home::quickstart.adoc#_create_free_cluster[**TypeDB**] is running as detailed in the xref:{page-version}@home::quickstart.adoc[Quickstart], and have the server's address and user credentials at hand. Now, let's connect to TypeDB and create your first database!
 
-The workflow here will depend on your client, but is straight-forward in either case. If you are new to TypeDB, we recommend trying TypeDB via *TypeDB Console*. But you can also access TypeDB via various *language drivers* and TypeDB's graphical user interface, *TypeDB Studio*, in this course.
+The workflow here will depend on your client, but is straight-forward in either case. If you are new to TypeDB, we recommend trying TypeDB via *TypeDB Studio*. But you can also access TypeDB via various *language drivers* and TypeDB's command line interface, *TypeDB Console*, in this course.
 
 [tabs]
 ====
+Studio::
++
+--
+First, ensure you have an active connection to TypeDB. If you don't, all Studio pages will prompt you to connect to TypeDB using your address and credentials.
+
+To select a database to work with, use the dropdown menu on the right of the database icon in the top toolbar. You can also create new databases here.
+
+TypeDB Studio will automatically select a *default* database if there are no others present.
+--
+
 Console::
 +
 --
@@ -89,14 +99,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 //}}
 ----
 --
-
-Studio::
-+
---
-After opening a project, use the database management button (image:{page-component-version}@home::studio-icons/svg/studio_dbs.svg[width=24]) to create and manage databases.
-
-See the xref:{page-version}@manual::tools/studio.adoc[Studio Manual] for more.
---
 ====
 
 == Working with transactions
@@ -113,6 +115,20 @@ How to open a transaction and run a query in it will depend on your client, but 
 
 [tabs]
 ====
+Studio::
++
+--
+Select your transaction type in the top bar: `schema`.
+
+On the Query page, enter the following query:
+[,typeql]
+----
+define entity user;
+----
+
+Click *Run query* to run and commit your query.
+--
+
 Console::
 +
 --
@@ -203,14 +219,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 == TypeDB's data model at a glance
@@ -241,6 +249,23 @@ Let's define a simple database schema: we want to store ``user``'s and their ``u
 
 [tabs]
 ====
+Studio::
++
+--
+On the Query page, select a *schema* transaction using the top bar as described above, then run these two queries.
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define1]
+----
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define2]
+----
+--
+
 Console::
 +
 --
@@ -359,14 +384,6 @@ include::./crash-course.adoc[tag=define2]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 Let us dissect the second query in a bit more detail.
@@ -380,6 +397,38 @@ Let's write a few more definition queries to get a feel of database schemas in T
 
 [tabs]
 ====
+Studio::
++
+--
+First, note that relation types, like entity types, are types of "`first-class objects`" in our type system. In particular, they too can own attributes (and may play roles in other relation types). As an example, let's run the following query:
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define3]
+----
+
+This defines a `start-date` attribute and then declares each friendship may own a `start_date` (i.e., the type `friendship` implements the "`start-date owner`" trait). The definition is followed by a `@card` annotation, which specifies that friendships own _between_ zero or one start dates. In fact, this is the default cardinality, so you don't actually need `@card` here at all.
+
+The next query illustrates usage of "`unbounded`" cardinality together with another useful annotation, `@key` (which, in this case, specifies that the `username` of a `user` should uniquely identify a user, i.e., it is a _key attribute_).
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define4]
+----
+
+Importantly, different types may own the same attributes; and, similarly, different types may play the same role of a relation type. This flexibility of connecting types is a central feature of data modeling with TypeDB. Run the next query to define an `organization` type which shares many of the traits of `user`:
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define5]
+----
+
+*Note:* By default, Studio auto-commits all schema and write queries. You may not always want this! For more fine-grained transaction control, you can change the mode to *manual* in the top bar.
+--
+
 Console::
 +
 --
@@ -541,20 +590,31 @@ async fn main() -> Result<(), Box<dyn Error>> {
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 
 Finally, yet another fundamental and powerful feature of TypeDB's type system is *subtyping*. Analogous to modern programming language features, this gives us the ability to organize our types hierarchically. The next example illustrates how this works.
 [tabs]
 ====
+Studio::
++
+--
+Let's define two types that specialize our earlier `organization` type: namely, we'll define `company` and `university` as special cases, i.e., subtypes of `organization`. The keyword to define subtypings is `sub`. Run the following query:
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define6]
+----
+Note that we haven't defined any traits for companies and universities; indeed, all traits of the supertype `organization` are automatically *inherited*! That doesn't stop from defining new traits for our subtypes, of course:
+
+[,typeql]
+----
+#!test[schema, db=my_test_db]
+include::./crash-course.adoc[tag=define7]
+----
+--
+
 Console::
 +
 --
@@ -679,14 +739,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 
@@ -699,6 +751,45 @@ Having defined the types in our schema, we are ready to write data to our databa
 
 [tabs]
 ====
+Studio::
++
+--
+To begin, set your transaction type to *write* using the top bar, then let us try and insert a user with the following `insert` query:
+
+[,typeql]
+----
+#!test[write, db=my_test_db, fail_at=commit]
+include::./crash-course.adoc[tag=insert1]
+----
+The commit _*will fail*_! Indeed, we are trying to insert a `user` without a username here, but we declared usernames to be a key attribute earlier when we defined `user owns username @key`. (In fact, even if the `insert` query above worked, it would be pretty useless: we are trying to insert an entity with type `user`, but we give no information about that entity and thus no way to refer to the entity. So our schema keeps us accountable in this case.)
+
+The following is more meaningful:
+
+[,typeql]
+----
+#!test[write, db=my_test_db]
+include::./crash-course.adoc[tag=insert2]
+----
+
+We can insert multiple values in a single `insert` query like so:
+
+[,typeql]
+----
+#!test[write, db=my_test_db]
+include::./crash-course.adoc[tag=insert3]
+----
+This query inserts two users at the same time.
+
+Finally, since we set usernames to be a `@key` attribute of our users, we would - rightfully - expect the following query to fail:
+
+[,typeql]
+----
+#!test[write, db=my_test_db, fail_at=runtime]
+include::./crash-course.adoc[tag=insert4]
+----
+And it does fail: this time, it already fails at runtime, i.e., even before committing the transaction. Indeed, because the key `"user_3"` would be claimed by two distinct `user` instances no matter what, we can immediately invalidate the transaction.
+--
+
 Console::
 +
 --
@@ -890,14 +981,6 @@ include::./crash-course.adoc[tag=insert3]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 This illustrates how we can insert simple entities with attributes, and how TypeDB keeps us accountable to follow the definitions in the database schema.
@@ -906,6 +989,31 @@ So far so good. Next question: what about inserting relations? Well, let's have 
 
 [tabs]
 ====
+Studio::
++
+--
+
+In order to insert a friendship, we need to refer to users that will play the role of friends in the friendship (recall: each friendship takes _exactly two_ friends as specified in the schema; feel free to experiment though, and see what error messages TypeDB will give you when trying to insert triple friendships). That's where variables come into play! Let's run the following query:
+
+[,typeql]
+----
+#!test[write, db=my_test_db]
+include::./crash-course.adoc[tag=insert5]
+----
+This query inserts two new users with a `friendship` relation between them. The last line is a shorthand, and could itself be written as `$f isa friendship (friend: $x, friend: $y);` if you'd want to further use the variable `$f`; but otherwise it's convenient to simply omit it.
+
+But what if we want to create a `friendship` relation between two existing users already in the database? That requires a two-stage *query pipeline* - (1) retrieve the user with a `match` *stage*; (2) `insert` the new `friendship`. We will discuss pipelines in more detail below; for now let's just run one:
+
+[,typeql]
+----
+#!test[write, db=my_test_db]
+include::./crash-course.adoc[tag=insert6]
+----
+This query first matches three existing users, and inserts three new friendships between them.
+
+Feel free to insert more data, e.g., create a university and enrol some of your users in it using our `enrolment` relations!
+--
+
 Console::
 +
 --
@@ -1042,14 +1150,6 @@ include::./crash-course.adoc[tag=insert6]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 TL;DR Inserting data is easy!
@@ -1069,6 +1169,28 @@ We can continue chaining pipeline stages in this way, with the output data of on
 
 [tabs]
 ====
+Studio::
++
+--
+The following pipeline adds "VIP" status for a specific user, then traverses all friendships of that user, and marks friends as VIPs themselves if they now have more than 3 VIP friends.
+
+[,typeql]
+----
+#!test[write, db=my_test_db]
+include::./crash-course.adoc[tag=insert7]
+----
+Notice how the variable `$user` is re-used throughout the first three stages of the pipeline. Also note how `match` stages are used both to retrieve new data and to filter data; both of these operations neatly fall into TypeQL's declarative pattern language.
+
+Running the above pipeline will return 0 answers if no friends of `"user_0"` have more than 3 "`VIP`" status friends themselves. Nonetheless, the pipeline still did some work. Let's verify this:
+
+[,typeql]
+----
+#!test[read, db=my_test_db, count=1]
+include::./crash-course.adoc[tag=insert8]
+----
+The query first matches users with "`VIP`" status and their usernames, and then _selects_ only the username. Here, `select` is *"`stream manipulation`"* stage (meaning it manipulates the data stream in a pipeline without calling back to the databases). In the case of `select`, this manipulation simply removes all non-selected variables from our results. (Try deleting the last line and comparing answers produced by the database.) The `reduce` stage in the previous example works similarly!
+--
+
 Console::
 +
 --
@@ -1204,14 +1326,6 @@ include::./crash-course.adoc[tag=insert8]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 [NOTE]
@@ -1232,6 +1346,17 @@ Reading data in an intuitive and composable programmatic way is TypeDB's superpo
 
 [tabs]
 ====
+Studio::
++
+--
+Use the top bar transaction control panel to set your transaction type to *read*.
+[,typeql]
+----
+#!test[read, db=my_test_db]
+include::./crash-course.adoc[tag=read1]
+----
+--
+
 Console::
 +
 --
@@ -1325,14 +1450,6 @@ include::./crash-course.adoc[tag=read1]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 
@@ -1353,6 +1470,19 @@ The above query is mildly interesting. But let's look at a slightly more complex
 
 [tabs]
 ====
+Studio::
++
+--
+Run the following *read* query in Studio and see what answers you get.
+[,typeql]
+----
+#!test[read, db=my_test_db, count=3]
+# Find users with more friends that Alex
+include::./crash-course.adoc[tag=read2]
+----
+Can you see just from reading the query what's going on here?
+--
+
 Console::
 +
 --
@@ -1457,14 +1587,6 @@ include::./crash-course.adoc[tag=read2]
 //}}
 ----
 --
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
---
 ====
 
 The goal of this second query is to find users with more friends than Alex. It has 6 stages:
@@ -1479,6 +1601,16 @@ Isn't that neat? Combining multiple query stages into a single query pipeline is
 
 [tabs]
 ====
+Studio::
++
+--
+[,typeql]
+----
+#!test[read, db=my_test_db, count=3]
+include::./crash-course.adoc[tag=read3]
+----
+--
+
 Console::
 +
 --
@@ -1576,14 +1708,6 @@ include::./crash-course.adoc[tag=read3]
 }
 //}}
 ----
---
-
-Studio::
-+
---
-Select your database using the database selector (image:{page-component-version}@home::studio-icons/database-none.png[width=128]), then select your transaction type in the top menu.
-
-Open your query file. Then click the run button to run your query. Finally, use the commit button (image:{page-version}@home::studio-icons/svg/studio_check.svg[width=24]) to persist any changes made.
 --
 ====
 

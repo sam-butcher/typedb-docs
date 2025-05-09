@@ -160,68 +160,31 @@ For a complete usage guide, visit the xref:{page-version}@manual::tools/console.
 [#_studio]
 == TypeDB Studio
 
-TypeDB Studio is a powerful GUI tool that facilitates development on TypeDB.
+TypeDB Studio is a graphical tool for managing and querying TypeDB databases.
+
+With Studio, developers can efficiently manage databases, execute queries, and explore query results,
+all within a unified environment.
+--
+
+[cols-2]
+--
+.https://studio.typedb.com[Open TypeDB Studio]
+[.clickable]
+****
+Launch TypeDB Studio directly from your web browser.
+****
+
+.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
+[.clickable]
+****
+The GitHub repository with the source code and release notes.
+****
 
 [NOTE]
 ====
-If you're using TypeDB Community Edition >=3.2.0-rc1, you can access the new TypeDB Studio experience at https://studio.typedb.com! Desktop builds will be published soon.
+Desktop builds will be published soon, powered by https://tauri.app[Tauri].
 
-Otherwise, see the below installation instructions for the legacy versions of TypeDB Studio.
-====
-
-=== Installation
-
-[tabs]
-====
-macOS::
-+
---
-Install TypeDB Studio using Homebrew:
-
-[source,bash]
-----
-brew tap typedb/tap
-brew install --cask typedb/tap/typedb-studio
-----
-
-Or download and install TypeDB Studio manually:
-include::{page-version}@manual:resources:partial$typedb-studio-latest-links.adoc[tag=mac]
---
-
-Linux::
-+
---
-Install TypeDB Studio using `apt`:
-
-. Add the TypeDB repository:
-+
-[source,bash]
-----
-sudo apt install software-properties-common apt-transport-https gpg
-gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-key 17507562824cfdcc
-gpg --export 17507562824cfdcc | sudo tee /etc/apt/trusted.gpg.d/typedb.gpg > /dev/null
-echo "deb https://repo.typedb.com/public/public-release/deb/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/typedb.list > /dev/null
-sudo apt update
-----
-. Install the application:
-+
-[source,bash]
-----
-sudo apt install typedb-studio
-----
-
-Or download and install TypeDB Studio manually:
-include::{page-version}@manual:resources:partial$typedb-studio-latest-links.adoc[tag=linux]
---
-
-Windows::
-+
---
-Download the installer:
-include::{page-version}@manual:resources:partial$typedb-studio-latest-links.adoc[tag=windows]
-
-The installation wizard will guide you through the process of installing TypeDB Studio.
---
+If you're using TypeDB 3.0 or 3.1, you can still access the (unmaintained) legacy TypeDB Studio application in https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name%3A%5Etypedb-studio&sort=-version[Cloudsmith].
 ====
 
 
@@ -229,11 +192,10 @@ The installation wizard will guide you through the process of installing TypeDB 
 
 TypeDB Studio allows users to:
 
-* Open a project folder containing their TypeQL files.
-* Connect to a TypeDB database and view the database schema.
+* Connect to TypeDB and manage databases.
 * Run TypeQL queries on your database and display query results.
 
-For a complete TypeDB Studio usage guide, visit the xref:{page-version}@manual::tools/studio.adoc[TypeDB Studio Manual].
+For a more detailed TypeDB Studio usage guide, visit the xref:{page-version}@manual::tools/studio.adoc[TypeDB Studio Manual].
 
 [#_drivers]
 == TypeDB Drivers
