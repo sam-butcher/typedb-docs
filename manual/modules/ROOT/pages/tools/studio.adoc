@@ -31,7 +31,7 @@ Launch TypeDB Studio directly from your web browser.
 
 [NOTE]
 ====
-Desktop builds will be published soon, powered by https://tauri.dev[Tauri].
+Desktop builds will be published soon, powered by https://tauri.app[Tauri].
 ====
 
 == Quickstart
