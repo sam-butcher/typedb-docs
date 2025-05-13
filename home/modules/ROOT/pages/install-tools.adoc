@@ -173,14 +173,14 @@ all within a unified environment.
 ****
 Launch TypeDB Studio directly from your web browser.
 ****
---
-
 
 .link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
 [.clickable]
 ****
 The GitHub repository with the source code and release notes.
 ****
+--
+
 
 [NOTE]
 ====
