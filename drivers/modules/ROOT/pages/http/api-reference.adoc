@@ -59,7 +59,7 @@ curl::
 [source,console]
 ----
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/signin \
+  --url http://localhost:8000/v1/signin \
   --json '{"username": "USERNAME", "password": "PASSWORD"}'
 ----
 
@@ -69,7 +69,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/signin"
+url = "http://localhost:8000/v1/signin"
 body = {
     "username": "USERNAME",
     "password": "PASSWORD"
@@ -99,7 +99,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/signin")
+        .post("http://localhost:8000/v1/signin")
         .json(&signin)
         .send().await;
     Ok(())
@@ -146,7 +146,7 @@ curl::
 [source,console]
 ----
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/version
+  --url http://localhost:8000/v1/version
 ----
 
 Python::
@@ -155,7 +155,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/version"
+url = "http://localhost:8000/v1/version"
 
 response = requests.get(url)
 ----
@@ -170,7 +170,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/version")
+        .get("http://localhost:8000/v1/version")
         .send().await;
     Ok(())
 }
@@ -216,7 +216,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/databases \
+  --url http://localhost:8000/v1/databases \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -226,7 +226,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases"
+url = "http://localhost:8000/v1/databases"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -245,7 +245,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/databases")
+        .get("http://localhost:8000/v1/databases")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -280,7 +280,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/databases/DATABASE_NAME \
+  --url http://localhost:8000/v1/databases/DATABASE_NAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -290,7 +290,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases/DATABASE_NAME"
+url = "http://localhost:8000/v1/databases/DATABASE_NAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -309,7 +309,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/databases/DATABASE_NAME")
+        .get("http://localhost:8000/v1/databases/DATABASE_NAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -344,7 +344,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/databases/DATABASE_NAME \
+  --url http://localhost:8000/v1/databases/DATABASE_NAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -354,7 +354,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases/DATABASE_NAME"
+url = "http://localhost:8000/v1/databases/DATABASE_NAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -373,7 +373,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/databases/DATABASE_NAME")
+        .post("http://localhost:8000/v1/databases/DATABASE_NAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -408,7 +408,7 @@ curl::
 ----
 
 curl --request DELETE \
-  --url http://0.0.0.0:8000/v1/databases/DATABASE_NAME \
+  --url http://localhost:8000/v1/databases/DATABASE_NAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -418,7 +418,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases/DATABASE_NAME"
+url = "http://localhost:8000/v1/databases/DATABASE_NAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -437,7 +437,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .delete("http://0.0.0.0:8000/v1/databases/DATABASE_NAME")
+        .delete("http://localhost:8000/v1/databases/DATABASE_NAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -472,7 +472,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/databases/DATABASE_NAME/schema \
+  --url http://localhost:8000/v1/databases/DATABASE_NAME/schema \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -482,7 +482,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases/DATABASE_NAME/schema"
+url = "http://localhost:8000/v1/databases/DATABASE_NAME/schema"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -501,7 +501,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/databases/DATABASE_NAME/schema")
+        .get("http://localhost:8000/v1/databases/DATABASE_NAME/schema")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -536,7 +536,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/databases/DATABASE_NAME/type-schema \
+  --url http://localhost:8000/v1/databases/DATABASE_NAME/type-schema \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -546,7 +546,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/databases/DATABASE_NAME/type-schema"
+url = "http://localhost:8000/v1/databases/DATABASE_NAME/type-schema"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -565,7 +565,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/databases/DATABASE_NAME/type-schema")
+        .get("http://localhost:8000/v1/databases/DATABASE_NAME/type-schema")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -602,7 +602,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/users \
+  --url http://localhost:8000/v1/users \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -612,7 +612,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/users"
+url = "http://localhost:8000/v1/users"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -631,7 +631,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/users")
+        .get("http://localhost:8000/v1/users")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -666,7 +666,7 @@ curl::
 ----
 
 curl --request GET \
-  --url http://0.0.0.0:8000/v1/users/USERNAME \
+  --url http://localhost:8000/v1/users/USERNAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -676,7 +676,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/users/USERNAME"
+url = "http://localhost:8000/v1/users/USERNAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -695,7 +695,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/v1/users/USERNAME")
+        .get("http://localhost:8000/v1/users/USERNAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -730,7 +730,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/users/USERNAME \
+  --url http://localhost:8000/v1/users/USERNAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}' \
   --json '{"password": "PASSWORD"}'
 ----
@@ -741,7 +741,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/users/USERNAME"
+url = "http://localhost:8000/v1/users/USERNAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -772,7 +772,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/users/USERNAME")
+        .post("http://localhost:8000/v1/users/USERNAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .json(&user_credentials)
         .send().await;
@@ -808,7 +808,7 @@ curl::
 ----
 
 curl --request PUT \
-  --url http://0.0.0.0:8000/v1/users/USERNAME \
+  --url http://localhost:8000/v1/users/USERNAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}' \
   --json '{"password": "PASSWORD"}'
 ----
@@ -819,7 +819,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/users/USERNAME"
+url = "http://localhost:8000/v1/users/USERNAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -850,7 +850,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .put("http://0.0.0.0:8000/v1/users/USERNAME")
+        .put("http://localhost:8000/v1/users/USERNAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .json(&user_credentials)
         .send().await;
@@ -886,7 +886,7 @@ curl::
 ----
 
 curl --request DELETE \
-  --url http://0.0.0.0:8000/v1/users/USERNAME \
+  --url http://localhost:8000/v1/users/USERNAME \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -896,7 +896,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/users/USERNAME"
+url = "http://localhost:8000/v1/users/USERNAME"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -915,7 +915,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .delete("http://0.0.0.0:8000/v1/users/USERNAME")
+        .delete("http://localhost:8000/v1/users/USERNAME")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -974,7 +974,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/transactions/open \
+  --url http://localhost:8000/v1/transactions/open \
   --header 'Authorization: Bearer {ACCESS-TOKEN}' \
   --json '{"databaseName": "DATABASE_NAME", "transactionType": "schema"}'
 ----
@@ -985,7 +985,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/transactions/open"
+url = "http://localhost:8000/v1/transactions/open"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1028,7 +1028,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/transactions/open")
+        .post("http://localhost:8000/v1/transactions/open")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .json(&transaction)
         .send().await;
@@ -1064,7 +1064,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/close \
+  --url http://localhost:8000/v1/transactions/TRANSACTION_ID/close \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -1074,7 +1074,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/close"
+url = "http://localhost:8000/v1/transactions/TRANSACTION_ID/close"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1093,7 +1093,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/close")
+        .post("http://localhost:8000/v1/transactions/TRANSACTION_ID/close")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -1128,7 +1128,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/commit \
+  --url http://localhost:8000/v1/transactions/TRANSACTION_ID/commit \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -1138,7 +1138,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/commit"
+url = "http://localhost:8000/v1/transactions/TRANSACTION_ID/commit"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1157,7 +1157,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/commit")
+        .post("http://localhost:8000/v1/transactions/TRANSACTION_ID/commit")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -1192,7 +1192,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/rollback \
+  --url http://localhost:8000/v1/transactions/TRANSACTION_ID/rollback \
   --header 'Authorization: Bearer {ACCESS-TOKEN}'
 ----
 
@@ -1202,7 +1202,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/rollback"
+url = "http://localhost:8000/v1/transactions/TRANSACTION_ID/rollback"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1221,7 +1221,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/rollback")
+        .post("http://localhost:8000/v1/transactions/TRANSACTION_ID/rollback")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .send().await;
     Ok(())
@@ -1281,7 +1281,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/query \
+  --url http://localhost:8000/v1/transactions/TRANSACTION_ID/query \
   --header 'Authorization: Bearer {ACCESS-TOKEN}' \
   --json '{"query": "define entity person;"}'
 ----
@@ -1292,7 +1292,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/query"
+url = "http://localhost:8000/v1/transactions/TRANSACTION_ID/query"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1324,7 +1324,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/transactions/TRANSACTION_ID/query")
+        .post("http://localhost:8000/v1/transactions/TRANSACTION_ID/query")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .json(&query)
         .send().await;
@@ -1389,7 +1389,7 @@ curl::
 ----
 
 curl --request POST \
-  --url http://0.0.0.0:8000/v1/query \
+  --url http://localhost:8000/v1/query \
   --header 'Authorization: Bearer {ACCESS-TOKEN}' \
   --json '{"databaseName": "DATABASE_NAME", "transactionType": "schema", "query": "define entity person;"}'
 ----
@@ -1400,7 +1400,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/v1/query"
+url = "http://localhost:8000/v1/query"
 
 headers = {
     "Authorization": "Bearer {ACCESS-TOKEN}"
@@ -1446,7 +1446,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     let client = reqwest::Client::new();
     let resp = client
-        .post("http://0.0.0.0:8000/v1/query")
+        .post("http://localhost:8000/v1/query")
         .header(reqwest::header::AUTHORIZATION, "Bearer {ACCESS-TOKEN}")
         .json(&query)
         .send().await;
@@ -1509,7 +1509,7 @@ curl::
 [source,console]
 ----
 curl --request GET \
-  --url http://0.0.0.0:8000/health
+  --url http://localhost:8000/health
 ----
 
 Python::
@@ -1518,7 +1518,7 @@ Python::
 ----
 import requests
 
-url = "http://0.0.0.0:8000/health"
+url = "http://localhost:8000/health"
 
 response = requests.get(url)
 ----
@@ -1533,7 +1533,7 @@ use reqwest;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let resp = client
-        .get("http://0.0.0.0:8000/health")
+        .get("http://localhost:8000/health")
         .send().await;
     Ok(())
 }
