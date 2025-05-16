@@ -2,26 +2,49 @@
 
 The TypeDB HTTP endpoint can be used to perform database management, user management, transaction management, and querying operations through HTTP.
 
-== Server configuration
-
-TypeDB server by runs both a gRPC (standard for most of the client applications) and an HTTP endpoint by default.
-Both endpoints have common authentication and xref:{page-version}@manual::configure/encryption.adoc[encryption settings].
-Additionally, it is possible to disable the HTTP endpoint and change its default port.
-
-[NOTE]
-====
-HTTP and gRPC ports must be different.
-====
-
-Please visit xref:{page-version}@manual::configure/server.adoc#_command_line_arguments[Server configuration] for the configuration specification.
-
 == Access the API
+
+=== Base URL
+
+// tag::connect[]
+[tabs]
+====
+Cloud::
++
+--
+// tag::connect_cloud[]
+. In the TypeDB Cloud website, navigate to your cluster and click *Connect*. Then, click *Connect with TypeDB HTTP API*. This will reveal the base URL of the HTTP API.
+. You'll need your user credentials, which can be found in your downloaded credentials file (if you have one).
+// end::connect_cloud[]
+--
+
+Enterprise::
++
+--
+// tag::connect_enterprise[]
+By default, the HTTP endpoint is hosted at port **8000**. This is configurable.
+
+You'll need your user credentials, which will be used to get an authentication token.
+// end::connect_enterprise[]
+--
+
+Community Edition::
++
+--
+// tag::connect_ce[]
+By default, the HTTP endpoint is hosted at port **8000**, and for local instances you can use `http://localhost:8000`.
+
+You'll need your user credentials, which will be used to get an authentication token.
+// end::connect_ce[]
+--
+====
+// end::connect[]
 
 [#_authentication]
 === Authentication
 
 Mostly all methods require Token-based authorization.
-These temporary tokens can be generated through a xref:{page-version}@drivers::http/api-reference.adoc#_sign_in[`POST` request to `localhost:8000/v1/signin`].
+These temporary tokens can be generated through a xref:{page-version}@drivers::http/api-reference.adoc#_sign_in[`POST` request to `/v1/signin`].
 Provide your TypeDB user credentials in the request's body.
 
 Change the xref:{page-version}@manual::configure/server.adoc#_command_line_arguments[`server.authentication.token_ttl_seconds`] parameter in the server's configuration to modify the time the tokens will remain valid before a new sign in request is required.
@@ -174,6 +197,21 @@ Can lead to: `400 Bad Request`
     "message": "[TSV17] Write query results limit (1) exceeded, and the transaction is aborted. Retry with an extended limit or break the query into multiple smaller queries to achieve the same result.\n[HSR13] Transaction error."
 }
 ----
+
+
+== Configuration
+
+TypeDB server offers both a gRPC (standard for most of the client applications) and an HTTP endpoint by default.
+Both endpoints have common authentication and xref:{page-version}@manual::configure/encryption.adoc[encryption settings].
+Additionally, it is possible to disable the HTTP endpoint and change its default port.
+
+[NOTE]
+====
+HTTP and gRPC ports must be different.
+====
+
+Please visit xref:{page-version}@manual::configure/server.adoc#_command_line_arguments[Server configuration] for the configuration specification.
+
 
 == Next Steps
 
