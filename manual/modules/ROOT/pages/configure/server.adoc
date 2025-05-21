@@ -4,11 +4,11 @@
 :summary: TypeDB Server configuration.
 :page-aliases: {page-version}@manual::configuring/arguments.adoc, {page-version}@manual::configuring/config.adoc, {page-version}@manual::configuring/logs.adoc, {page-version}@manual::configuring/overview.adoc
 
-[#_options]
-== Command line configuration
+This page describes how to configure a TypeDB server.
 
-TypeDB can use command line arguments for server configuration.
-For a full list of acceptable arguments run:
+You can configure a TypeDB server via two means: config file, or command line options. Command line options override values defined in the config file.
+
+For a full list of configurable properties run:
 
 [source,bash]
 ----
@@ -17,15 +17,11 @@ typedb server --help
 
 or see <<_command_line_arguments>> below.
 
-All CLI arguments must:
+When using the command line, all CLI arguments must:
 
 * start with the double dash prefix `--`,
 * be separated from their value (if any) either by an equals sign (`--arg=val`) or a whitespace (`--arg val`).
 
-[NOTE]
-=====
-Coming soon: configuration via config files.
-=====
 
 [#_overview]
 == Configuration options
