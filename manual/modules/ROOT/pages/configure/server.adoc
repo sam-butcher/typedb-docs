@@ -71,10 +71,7 @@ To configure diagnostics reporting and monitoring, see the respective section of
 [#_log]
 === Logging
 
-[NOTE]
-=====
-Coming soon.
-=====
+You can configure the directory that TypeDB uses for server logs - see the Logging section of <<_command_line_arguments>> below.
 
 [#_machine_requirements]
 == Host machine configuration
@@ -135,61 +132,66 @@ The following arguments can be used for TypeDB configuration:
 ^| Argument ^| Alias ^| Description
 
 3+^| Server
-| `--server.address=<SERVER_ADDRESS>`
+| `server.address`
 |
 | Server host and port. Default value: `0.0.0.0:1729`. +
 
-| `--server.http.enable=<BOOL>`
+| `server.http.enable`
 |
 | Enable/disable HTTP endpoint. Default value: `true`. +
 
-| `--server.http.address=<SERVER_ADDRESS>`
+| `server.http.address`
 |
 | HTTP endpoint host and port. Cannot be the same as `server.address`. Default value: `0.0.0.0:8000`. +
 
-| `--server.authentication.token_ttl_seconds=<SERVER_ADDRESS>`
+| `server.authentication.token_ttl_seconds`
 |
 | The amount of seconds generated authentication tokens will remain valid, specified in seconds. Default value: `14400` (4 hours). +
 
-| `--server.encryption.enabled`
+| `server.encryption.enabled`
 |
 | Enable in-flight encryption. Do not specify this argument to leave it disabled. +
 
-| `--server.encryption.cert=<FILE>`
+| `server.encryption.cert`
 |
 | Encryption certificate in PEM format. Must be supplied if encryption is enabled. +
 
-| `--server.encryption.cert-key=<FILE>`
+| `server.encryption.cert-key`
 |
 | Encryption certificate key. Must be supplied if encryption is enabled. +
 
-| `--server.encryption.root-ca=<FILE>`
+| `server.encryption.root-ca`
 |
 | Encryption CA in PEM format. +
 
 3+^| Storage
-| `--storage.data=<DIR>`
+| `storage.data-directory`
 |
-| Path to the user data directory. Defaults to within the server distribution under server/data. +
+| Path to the user data directory. Defaults to within the server distribution under `server/data`. +
 
 3+^| Diagnostics
-| `--diagnostics.reporting.metrics=<BOOL>`
+| `diagnostics.reporting.metrics`
 |
 | Enable usage metrics reporting by setting a boolean flag. Default value: `true`. +
 
-| `--diagnostics.reporting.errors=<BOOL>`
+| `diagnostics.reporting.errors`
 |
 | Enable critical error reporting by setting a boolean flag. Default value: `true`. +
 
-| `--diagnostics.monitoring.enable=<BOOL>`
+| `diagnostics.monitoring.enable`
 |
 | Enable a diagnostics monitoring HTTP endpoint by setting a boolean flag. Default value: `true`. +
 
-| `--diagnostics.monitoring.port=<PORT>`
+| `diagnostics.monitoring.port`
 |
 | Port on which to expose the diagnostics monitoring endpoint. Default value: `4104`. +
 
-3+^| Common
+3+^| Logging
+| `logging.directory`
+|
+| Path to the server logs directory. Defaults to within the server distribution under `server/logs`. +
+
+3+^| Additional Console utils (Console only)
 | `--help`
 | `-h`
 | Show help message.
