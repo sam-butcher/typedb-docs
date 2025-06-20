@@ -72,7 +72,7 @@ Community Edition::
 // tag::connect_ce_studio[]
 . Launch https://studio.typedb.com[TypeDB Studio].
 . Enter the address of the HTTP endpoint of your cluster. By default, this is at port 8000 and for local instances you can use `http://localhost:8000`.
-. Enter your username and password.
+. Enter your username and password - defaults are `admin` and `password`.
 . Click `Connect`.
 // end::connect_ce_studio[]
 --
