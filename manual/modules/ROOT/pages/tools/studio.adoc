@@ -31,7 +31,9 @@ Launch TypeDB Studio directly from your web browser.
 
 [NOTE]
 ====
-Desktop builds will be published soon, powered by https://tauri.app[Tauri].
+Desktop build RC versions are now available, powered by https://tauri.app[Tauri].
+
+See the [GitHub release notes] or download TypeDB Studio from [Cloudsmith].
 ====
 
 == Quickstart
@@ -249,5 +251,5 @@ Both types of errors can be viewed and copied to the clipboard by visiting the H
 // tag::compat-intro[]
 If you're using TypeDB 3.0 or 3.1, you can still access the (unmaintained) legacy TypeDB Studio application in https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name%3A%5Etypedb-studio&sort=-version[Cloudsmith].
 
-Support for the legacy application was dropped in TypeDB 3.2; we encourage users to upgrade to TypeDB 3.2 to access the new TypeDB Studio.
+The legacy application is no longer supported. We encourage users to upgrade to TypeDB 3.3 or later to access the new TypeDB Studio.
 // end::compat-intro[]
