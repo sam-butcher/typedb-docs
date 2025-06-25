@@ -16,16 +16,16 @@ all within a unified environment.
 
 [cols-2]
 --
-.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
-[.clickable]
-****
-The GitHub repository with the source code and release notes.
-****
-
 .https://studio.typedb.com[Open TypeDB Studio]
 [.clickable]
 ****
 Launch TypeDB Studio directly from your web browser.
+****
+
+.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
+[.clickable]
+****
+The GitHub repository with the source code and release notes.
 ****
 --
 
@@ -33,7 +33,7 @@ Launch TypeDB Studio directly from your web browser.
 ====
 Desktop build RC versions are now available, powered by https://tauri.app[Tauri].
 
-See the [GitHub release notes] or download TypeDB Studio from [Cloudsmith].
+See the https://github.com/typedb/typedb-studio/releases/tag/3.4.0-rc1[GitHub release notes] or download the TypeDB Studio desktop application from https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name:%5Etypedb-studio[Cloudsmith].
 ====
 
 == Quickstart
