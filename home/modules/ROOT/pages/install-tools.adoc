@@ -166,7 +166,7 @@ With Studio, developers can efficiently manage databases, execute queries, and e
 all within a unified environment.
 
 
-[cols-2]
+[cols-3]
 --
 .https://studio.typedb.com[Open TypeDB Studio]
 [.clickable]
@@ -174,20 +174,18 @@ all within a unified environment.
 Launch TypeDB Studio directly from your web browser.
 ****
 
+.https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name:%5Etypedb-studio[Download TypeDB Studio Desktop]
+[.clickable]
+****
+Download the TypeDB Studio desktop application.
+****
+
 .link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
 [.clickable]
 ****
-The GitHub repository with the source code and release notes.
+Browse the source code of TypeDB Studio.
 ****
 --
-
-
-[NOTE]
-====
-Desktop builds will be published soon, powered by https://tauri.app[Tauri].
-
-If you're using TypeDB 3.0 or 3.1, you can still access the (unmaintained) legacy TypeDB Studio application in https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name%3A%5Etypedb-studio&sort=-version[Cloudsmith].
-====
 
 
 === Using Studio
@@ -196,6 +194,7 @@ TypeDB Studio allows users to:
 
 * Connect to TypeDB and manage databases.
 * Run TypeQL queries on your database and display query results.
+* Inspect your schema.
 
 For a more detailed TypeDB Studio usage guide, visit the xref:{page-version}@manual::tools/studio.adoc[TypeDB Studio Manual].
 
