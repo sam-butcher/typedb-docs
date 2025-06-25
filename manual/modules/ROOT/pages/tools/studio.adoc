@@ -8,7 +8,7 @@
 
 [.float-group]
 --
-TypeDB Studio is a graphical tool for managing and querying TypeDB databases.
+TypeDB Studio is a interactive visual environment for managing and querying TypeDB databases.
 
 With Studio, developers can efficiently manage databases, execute queries, and explore query results,
 all within a unified environment.
