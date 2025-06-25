@@ -14,7 +14,7 @@ With Studio, developers can efficiently manage databases, execute queries, and e
 all within a unified environment.
 --
 
-[cols-2]
+[cols-3]
 --
 .https://studio.typedb.com[Open TypeDB Studio]
 [.clickable]
@@ -22,19 +22,19 @@ all within a unified environment.
 Launch TypeDB Studio directly from your web browser.
 ****
 
+.https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name:%5Etypedb-studio[Download TypeDB Studio Desktop]
+[.clickable]
+****
+Download the TypeDB Studio desktop application.
+****
+
 .link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
 [.clickable]
 ****
-The GitHub repository with the source code and release notes.
+Browse the source code of TypeDB Studio.
 ****
 --
 
-[NOTE]
-====
-Desktop build RC versions are now available, powered by https://tauri.app[Tauri].
-
-See the https://github.com/typedb/typedb-studio/releases/tag/3.4.0-rc1[GitHub release notes] or download the TypeDB Studio desktop application from https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name:%5Etypedb-studio[Cloudsmith].
-====
 
 == Quickstart
 
@@ -50,7 +50,7 @@ Cloud::
 +
 --
 // tag::connect_cloud_studio[]
-. In the TypeDB Cloud website, navigate to your cluster and click *Connect*. Then, click *Connect with TypeDB Studio*. This will launch TypeDB Studio.
+. In the https://cloud.typedb.com[TypeDB Cloud website], navigate to your cluster and click *Connect*. Then, click *Connect with TypeDB Studio*. This will launch TypeDB Studio.
 . Fill in your password and hit *Connect*. Your password can be found in your downloaded credentials file (if you have one).
 // end::connect_cloud_studio[]
 --
@@ -59,7 +59,7 @@ Enterprise::
 +
 --
 // tag::connect_enterprise_studio[]
-. Launch https://studio.typedb.com[TypeDB Studio].
+. Launch TypeDB Studio.
 . Enter the address of the HTTP endpoint of your cluster. By default, this is at port 8000.
 . Enter your username and password.
 . Click `Connect`.
@@ -70,7 +70,7 @@ Community Edition::
 +
 --
 // tag::connect_ce_studio[]
-. Launch https://studio.typedb.com[TypeDB Studio].
+. Launch TypeDB Studio.
 . Enter the address of the HTTP endpoint of your cluster. By default, this is at port 8000 and for local instances you can use `http://localhost:8000`.
 . Enter your username and password - defaults are `admin` and `password`.
 . Click `Connect`.
@@ -114,6 +114,13 @@ The Log contains textual output, similar to xref:{page-version}@manual::console.
 Table view is well suited for visualising the answers of *match* and *fetch* queries in a tabular format, where each row represents an answer, and each column represents a variable.
 
 Raw output allows you to see the raw HTTP response from TypeDB.
+
+[#_schema_pane]
+=== Schema pane
+
+The Schema pane lists your schema objects and their capabilities - e.g. owned attributes and played roles.
+
+It acts as a reference panel indicating what you can query.
 
 [#_history_]
 === History pane
