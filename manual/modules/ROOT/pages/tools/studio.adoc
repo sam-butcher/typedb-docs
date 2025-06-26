@@ -14,7 +14,7 @@ With Studio, developers can efficiently manage databases, execute queries, and e
 all within a unified environment.
 --
 
-[cols-3]
+[cols-2]
 --
 .https://studio.typedb.com[Open TypeDB Studio]
 [.clickable]
