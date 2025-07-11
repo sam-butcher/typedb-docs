@@ -21,4 +21,10 @@ Get up and running with TypeDB quickly, from setup to advanced queries.
 ****
 Choose and install the right TypeDB distribution and applications for your needs.
 ****
--- 
+
+.xref:{page-version}@new_home::learning_journey.adoc[]
+[.clickable]
+****
+Our guide on how to learn TypeDB and use these docs.
+****
+--

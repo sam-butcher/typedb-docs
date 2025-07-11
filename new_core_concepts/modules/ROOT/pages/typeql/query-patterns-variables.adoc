@@ -1,4 +1,0 @@
-= Query Patterns and Variables
-
-[placeholder]
-TypeQL query patterns and variables. 

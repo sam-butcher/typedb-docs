@@ -1,4 +1,4 @@
-= Data Model
+= Entities, Relations, Attributes
 
 [placeholder]
 TypeQL data model concepts. 

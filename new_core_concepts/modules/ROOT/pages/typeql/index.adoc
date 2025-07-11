@@ -4,43 +4,55 @@ Explore the TypeQL language and its core concepts.
 
 [cols-2]
 --
-.xref:{page-version}@new_core_concepts::typeql/data-model.adoc[Data Model]
+.xref:{page-version}@new_core_concepts::typeql/overview.adoc[]
 [.clickable]
 ****
-The TypeQL data model.
+TypeQL overview.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/constraints-integrity.adoc[Constraints & Integrity]
+.xref:{page-version}@new_core_concepts::typeql/entities-relations-attributes.adoc[]
 [.clickable]
 ****
-TypeQL constraints and data integrity.
+The TypeQL data model using entities, relations, and attributes.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/schema-vs-data.adoc[Schema vs Data]
+.xref:{page-version}@new_core_concepts::typeql/constraining-data.adoc[]
+[.clickable]
+****
+Constraining data using TypeQL.
+****
+
+.xref:{page-version}@new_core_concepts::typeql/schema-vs-data.adoc[]
 [.clickable]
 ****
 TypeQL schema vs data concepts.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/query-patterns-variables.adoc[Query Patterns and Variables]
+.xref:{page-version}@new_core_concepts::typeql/query-variables-patterns.adoc[]
 [.clickable]
 ****
-TypeQL query patterns and variables.
+TypeQL query variables and patterns.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/query-pipelines.adoc[Query Pipelines]
+.xref:{page-version}@new_core_concepts::typeql/query-clauses.adoc[]
 [.clickable]
 ****
-TypeQL query pipelines.
+TypeQL query clauses.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/functions.adoc[Functions]
+.xref:{page-version}@new_core_concepts::typeql/query-chaining.adoc[]
 [.clickable]
 ****
-TypeQL functions.
+Chaining TypeQL query clauses and queries.
 ****
 
-.xref:{page-version}@new_core_concepts::typeql/best-practices.adoc[Best practices]
+.xref:{page-version}@new_core_concepts::typeql/queries-as-functions.adoc[]
+[.clickable]
+****
+TypeQL queries as functions.
+****
+
+.xref:{page-version}@new_core_concepts::typeql/best-practices.adoc[]
 [.clickable]
 ****
 Best practices for using TypeQL.

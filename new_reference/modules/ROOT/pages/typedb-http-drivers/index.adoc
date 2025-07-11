@@ -1,10 +1,10 @@
-= HTTP Drivers
+= TypeDB HTTP Drivers
 
 HTTP drivers for TypeDB.
 
 [cols-2]
 --
-.xref:{page-version}@new_reference::http-drivers/typescript.adoc[]
+.xref:{page-version}@new_reference::typedb-http-drivers/typescript.adoc[]
 [.clickable]
 ****
 Typescript HTTP driver for TypeDB.

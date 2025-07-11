@@ -1,4 +1,4 @@
-= Functions
+= Queries as Functions
 
 [placeholder]
 TypeQL functions. 

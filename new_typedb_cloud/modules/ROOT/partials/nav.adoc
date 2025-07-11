@@ -3,5 +3,3 @@
 * xref:{page-version}@new_typedb_cloud::overview.adoc[]
 
 * xref:{page-version}@new_typedb_cloud::api-overview.adoc[]
-
-* xref:{page-version}@new_typedb_cloud::api-reference.adoc[] 

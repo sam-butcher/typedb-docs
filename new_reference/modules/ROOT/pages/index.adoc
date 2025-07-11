@@ -1,25 +1,25 @@
 = Reference
 
-Complete reference documentation for TypeDB.
+Complete reference documentation.
 
 [cols-2]
 --
-.xref:{page-version}@new_reference::server-grpc-drivers/python.adoc[Server GRPC Drivers]
+.xref:{page-version}@new_reference::typedb-grpc-drivers/index.adoc[]
 [.clickable]
 ****
-GRPC drivers for TypeDB server (Python, Java, Rust).
+GRPC drivers for TypeDB server.
 ****
 
-.xref:{page-version}@new_reference::server-http-api.adoc[]
+.xref:{page-version}@new_reference::typedb-http-api.adoc[]
 [.clickable]
 ****
 HTTP API reference for TypeDB server.
 ****
 
-.xref:{page-version}@new_reference::http-drivers/index.adoc[]
+.xref:{page-version}@new_reference::typedb-http-drivers/index.adoc[]
 [.clickable]
 ****
-HTTP drivers for TypeDB.
+Helpful HTTP driver libraries for TypeDB.
 ****
 
 .xref:{page-version}@new_reference::cloud-http-api.adoc[]
@@ -28,7 +28,7 @@ HTTP drivers for TypeDB.
 HTTP API reference for TypeDB Cloud.
 ****
 
-.xref:{page-version}@new_reference::typeql.adoc[]
+.xref:{page-version}@new_reference::typeql/index.adoc[]
 [.clickable]
 ****
 Complete TypeQL language reference.

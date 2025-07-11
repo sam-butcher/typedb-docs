@@ -1,0 +1,4 @@
+= Learning Journey
+
+[placeholder]
+This page will describe how to learn TypeDB and use these docs.

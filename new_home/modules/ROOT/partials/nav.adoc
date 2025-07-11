@@ -15,4 +15,6 @@
 ** xref:{page-version}@new_home::install/cloud.adoc[]
 ** xref:{page-version}@new_home::install/enterprise.adoc[]
 ** xref:{page-version}@new_home::install/ce.adoc[]
-** xref:{page-version}@new_home::install/studio-console.adoc[] 
+** xref:{page-version}@new_home::install/studio-console.adoc[]
+
+* xref:{page-version}@new_home::learning_journey.adoc[]

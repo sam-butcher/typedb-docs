@@ -1,4 +1,0 @@
-= Constraints & Integrity
-
-[placeholder]
-TypeQL constraints and data integrity. 
