@@ -1,4 +1,4 @@
-= Server Upgrades
+= TypeDB Upgrades
 
 [placeholder]
 Upgrade TypeDB servers. 

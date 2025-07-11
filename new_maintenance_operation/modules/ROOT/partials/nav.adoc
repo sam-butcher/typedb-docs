@@ -1,12 +1,12 @@
 .Maintenance & Operation
 
-* xref:{page-version}@new_maintenance_operation::server-upgrades.adoc[]
+* xref:{page-version}@new_maintenance_operation::typedb-upgrades.adoc[]
 
-* xref:{page-version}@new_maintenance_operation::server-backups.adoc[]
+* xref:{page-version}@new_maintenance_operation::typedb-backups.adoc[]
 
-* xref:{page-version}@new_maintenance_operation::server-configuration.adoc[]
+* xref:{page-version}@new_maintenance_operation::typedb-configuration.adoc[]
 
-* xref:{page-version}@new_maintenance_operation::server-in-flight-encryption.adoc[]
+* xref:{page-version}@new_maintenance_operation::typedb-in-flight-encryption.adoc[]
 
 * xref:{page-version}@new_maintenance_operation::database-export-import.adoc[]
 

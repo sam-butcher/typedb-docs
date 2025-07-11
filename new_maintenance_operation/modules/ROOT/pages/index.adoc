@@ -4,28 +4,28 @@ Learn how to maintain and operate TypeDB servers.
 
 [cols-2]
 --
-.xref:{page-version}@new_maintenance_operation::server-upgrades.adoc[]
+.xref:{page-version}@new_maintenance_operation::typedb-upgrades.adoc[]
 [.clickable]
 ****
 Upgrade TypeDB servers.
 ****
 
-.xref:{page-version}@new_maintenance_operation::server-backups.adoc[]
+.xref:{page-version}@new_maintenance_operation::typedb-backups.adoc[]
 [.clickable]
 ****
 Backup TypeDB servers.
 ****
 
-.xref:{page-version}@new_maintenance_operation::server-in-flight-encryption.adoc[]
-[.clickable]
-****
-Configure in-flight encryption for TypeDB servers.
-****
-
-.xref:{page-version}@new_maintenance_operation::server-configuration.adoc[]
+.xref:{page-version}@new_maintenance_operation::typedb-configuration.adoc[]
 [.clickable]
 ****
 Configure TypeDB servers.
+****
+
+.xref:{page-version}@new_maintenance_operation::typedb-in-flight-encryption.adoc[]
+[.clickable]
+****
+Set up in-flight encryption for self-managed TypeDB servers.
 ****
 
 .xref:{page-version}@new_maintenance_operation::database-export-import.adoc[]

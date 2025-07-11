@@ -1,4 +1,4 @@
-= Studio & Console
+= Console CLI
 
 TypeDB Console is a standalone TypeDB client with a command line interface (CLI).
 It serves as a lightweight and powerful CLI tool to manage and query TypeDB databases.

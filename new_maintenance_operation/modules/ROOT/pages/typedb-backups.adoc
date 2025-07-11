@@ -1,4 +1,4 @@
-= Server Backups
+= TypeDB Backups
 
 [placeholder]
 Backup TypeDB servers. 
