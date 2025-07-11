@@ -1,3 +1,5 @@
+. Get started
+
 * xref:{page-version}@new_home::introduction/index.adoc[]
 ** xref:{page-version}@new_home::introduction/what-is-typedb.adoc[]
 ** xref:{page-version}@new_home::introduction/key-concepts.adoc[]
