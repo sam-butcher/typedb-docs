@@ -1,4 +1,0 @@
-= Overview
-
-[placeholder]
-Overview of TypeDB Cloud. 

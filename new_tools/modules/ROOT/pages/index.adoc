@@ -21,4 +21,10 @@ TypeDB Console - the CLI client for TypeDB.
 ****
 IDE plugins for TypeDB development.
 ****
--- 
+
+.xref:{page-version}@new_tools::typedb-cloud-api.adoc[]
+[.clickable]
+****
+API for programmatically interacting with TypeDB Cloud.
+****
+--

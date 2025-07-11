@@ -4,19 +4,19 @@ Welcome to the Introduction section. Here you'll learn about TypeDB fundamentals
 
 [cols-2]
 --
-.xref:{page-version}@new_home::introduction/what-is-typedb.adoc[What is TypeDB?]
+.xref:{page-version}@new_home::introduction/what-is-typedb.adoc[]
 [.clickable]
 ****
 Learn about TypeDB and its core features.
 ****
 
-.xref:{page-version}@new_home::introduction/key-concepts.adoc[Key Concepts]
+.xref:{page-version}@new_home::introduction/key-concepts.adoc[]
 [.clickable]
 ****
 Understand the fundamental concepts behind TypeDB.
 ****
 
-.xref:{page-version}@new_home::introduction/why-typedb.adoc[Why TypeDB?]
+.xref:{page-version}@new_home::introduction/why-typedb.adoc[]
 [.clickable]
 ****
 Discover the benefits and use cases for TypeDB.

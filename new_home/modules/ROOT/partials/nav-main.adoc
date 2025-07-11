@@ -6,8 +6,6 @@ include::{page-version}@new_core_concepts::partial$nav.adoc[]
 
 include::{page-version}@new_tools::partial$nav.adoc[]
 
-include::{page-version}@new_typedb_cloud::partial$nav.adoc[]
-
 include::{page-version}@new_maintenance_operation::partial$nav.adoc[]
 
 include::{page-version}@new_reference::partial$nav.adoc[]
