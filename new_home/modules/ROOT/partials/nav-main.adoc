@@ -1,16 +1,13 @@
-* xref:{page-version}@new_home::introduction/index.adoc[]
-** xref:{page-version}@new_home::introduction/what-is-typedb.adoc[]
-** xref:{page-version}@new_home::introduction/key-concepts.adoc[]
-** xref:{page-version}@new_home::introduction/why-typedb.adoc[]
+include::{page-version}@new_home::partial$nav.adoc[]
 
-* xref:{page-version}@new_home::quickstart/index.adoc[]
-** xref:{page-version}@new_home::quickstart/setup.adoc[]
-** xref:{page-version}@new_home::quickstart/initialise-database.adoc[]
-** xref:{page-version}@new_home::quickstart/basic-queries.adoc[]
-** xref:{page-version}@new_home::quickstart/advanced-queries.adoc[]
+include::{page-version}@new_examples::partial$nav.adoc[]
 
-* xref:{page-version}@new_home::install/index.adoc[]
-** xref:{page-version}@new_home::install/cloud.adoc[]
-** xref:{page-version}@new_home::install/enterprise.adoc[]
-** xref:{page-version}@new_home::install/ce.adoc[]
-** xref:{page-version}@new_home::install/studio-console.adoc[] 
+include::{page-version}@new_core_concepts::partial$nav.adoc[]
+
+include::{page-version}@new_tools::partial$nav.adoc[]
+
+include::{page-version}@new_typedb_cloud::partial$nav.adoc[]
+
+include::{page-version}@new_maintenance_operation::partial$nav.adoc[]
+
+include::{page-version}@new_reference::partial$nav.adoc[]
