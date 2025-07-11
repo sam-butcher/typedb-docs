@@ -7,3 +7,6 @@ include::{page-version}@drivers::partial$nav.adoc[]
 include::{page-version}@typeql::partial$nav.adoc[]
 
 include::{page-version}@academy::partial$nav.adoc[]
+
+
+include::{page-version}@new_home::partial$nav-main.adoc[]
