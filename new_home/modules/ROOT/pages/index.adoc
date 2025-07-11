@@ -4,19 +4,19 @@ Welcome to the new Get Started section for TypeDB. Use the cards below to explor
 
 [cols-2]
 --
-.xref:{page-version}@new_home::introduction/index.adoc[Introduction]
+.xref:{page-version}@new_home::introduction/index.adoc[]
 [.clickable]
 ****
 Learn about TypeDB, its key concepts, and why to use it.
 ****
 
-.xref:{page-version}@new_home::quickstart/index.adoc[Quickstart]
+.xref:{page-version}@new_home::quickstart/index.adoc[]
 [.clickable]
 ****
 Get up and running with TypeDB quickly, from setup to advanced queries.
 ****
 
-.xref:{page-version}@new_home::install/index.adoc[Install]
+.xref:{page-version}@new_home::get-typedb/index.adoc[]
 [.clickable]
 ****
 Choose and install the right TypeDB distribution and applications for your needs.

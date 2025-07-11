@@ -1,0 +1,33 @@
+= Web Studio
+
+TypeDB Studio is an interactive visual environment for managing and querying TypeDB databases.
+
+With Studio, developers can efficiently manage databases, execute queries, and explore query results,
+all within a unified environment.
+
+[cols-2]
+--
+.https://studio.typedb.com[Open TypeDB Studio]
+[.clickable]
+****
+Launch TypeDB Studio directly from your web browser.
+****
+
+.https://cloudsmith.io/~typedb/repos/public-release/packages/?q=name:%5Etypedb-studio[Download TypeDB Studio Desktop]
+[.clickable]
+****
+Download the TypeDB Studio desktop application.
+****
+
+.link:https://github.com/typedb/typedb-studio/[GitHub,window=_blank]
+[.clickable]
+****
+Browse the source code of TypeDB Studio.
+****
+--
+
+== Getting Started
+
+After installation, you can connect to TypeDB servers. For detailed connection instructions and usage guides, see:
+
+* xref:{page-version}@new_tools::studio.adoc[] - Complete Studio documentation and connection guide
