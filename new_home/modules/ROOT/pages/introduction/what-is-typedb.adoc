@@ -1,21 +1,19 @@
 = What is TypeDB?
 
-Welcome to the world of TypeDB!
+Welcome to the world of TypeDB, a new kind of database designed to help you model and query complex data with clarity and confidence.
 
-This page introduces TypeDB, a new kind of database designed to help you model and query complex data with clarity and confidence.
-
-At its core, TypeDB is a **strongly-typed, polymorphic, and general-purpose transactional database**.
+TypeDB is a **strongly-typed, polymorphic, and general-purpose transactional database**. We'll explain what that means in a bit!
 
 It's well-suited for agentic AI systems and applications that require a deep understanding of rich, interconnected data and built-in guardrails.
 TypeDB is also excellent for cybersecurity, financial services, supply chain management, research, and other domains with complex data.
 
-TypeDB ships with its own query language, TypeQL, which allows you to define sophisticated data models and write simple yet highly expressive queries. 
+TypeDB ships with its own query language, **TypeQL**, which allows you to define sophisticated data models and write simple yet highly expressive queries.
 TypeQL is designed to read and write like natural English, making it easy to discuss, model, and evolve data collaboratively.
 
-TypeDB integrates with pre-built tools: the web-based TypeDB Studio and the command-line TypeDB Console.
-It can also be used programmatically with performant gRPC-based drivers in various languages, or directly via its HTTP API.
+TypeDB integrates with pre-built tools: the web-based **TypeDB Studio** and the command-line **TypeDB Console**.
+It can also be used programmatically with performant **gRPC-based drivers** in various languages, or directly via its **HTTP API**.
 
-TypeDB is open-source and available as a free Community Edition, or in TypeDB Cloud, where upgrades, backups, and security are fully managed. 
+TypeDB is **open-source** and available as a free Community Edition, or in **TypeDB Cloud**, where upgrades, backups, and security are fully managed.
 TypeDB Enterprise is also available for on-premise deployments.
 
 == Key Concepts
@@ -30,10 +28,32 @@ Every piece of data inserted into the database has a specific type from the sche
 This isn't just about data types like "string" or "integer". 
 Instead, you use **entity types** (e.g., `person`, `company`), **relation types** (e.g., `friendship`, `employs`), and **attribute types** containing values (e.g., `name`, `age`, `address`).
 
+[,typeql]
+----
+define
+  entity person,
+    owns name,
+    owns age,
+    plays friendship:friend,
+    plays employment:employee;
+  entity company,
+    owns name,
+    owns address,
+    plays employment:employer;
+  relation friendship,
+    relates friend;
+  relation employment,
+    relates employee,
+    relates employer;
+  attribute name, value string;
+  attribute age, value integer;
+  attribute address, value string;
+----
+
 Just like in strongly-typed programming languages, the system can now understand and validate structure, and even perform optimizations based on typing information.
 
 In the end, the same requirements that make developers choose TypeScript over JavaScript, or decide to add typing to a Python codebase, 
-exist in the data layer as well: correctness, performance, and maintainability. 
+exist in the data layer as well: **correctness, performance, and maintainability**.
 With TypeDB, you get a database that is designed to tackle those problems in an intuitive, modern way.
 
 === Polymorphic
@@ -41,6 +61,18 @@ With TypeDB, you get a database that is designed to tackle those problems in an 
 TypeDB types can do far more than you'd initially expect. Not only can you define simple entities, relations, and attributes, you can also define subtype hierarchies, additional interface-like role types, and reusable functions.
 
 These capabilities in turn compose with each other and interact polymorphically—for example, a user-defined function that can accept a `person` entity as an argument can also automatically take its subtype `child` entity as an argument!
+
+[,typeql]
+----
+define
+  entity child,
+    sub person;
+
+  # any person or subtype of person's friends can be counted with this re-usable function
+  fun count_friends($person: person) -> integer:
+    match friendship ($person);
+    return count;
+----
 
 TypeDB builds extensibility and reusability into your data models, reducing maintenance and development costs, while also allowing you to write less and do more.
 
