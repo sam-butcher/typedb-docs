@@ -10,10 +10,10 @@ TypeDB is also excellent for cybersecurity, financial services, supply chain man
 TypeDB ships with its own query language, **TypeQL**, which allows you to define sophisticated data models and write simple yet highly expressive queries.
 TypeQL is designed to read and write like natural English, making it easy to discuss, model, and evolve data collaboratively.
 
-TypeDB integrates with pre-built tools: the web-based **TypeDB Studio** and the command-line **TypeDB Console**.
+TypeDB integrates with pre-built tools: the web-based xref:{page-version}@new_home::get-typedb/web-studio.adoc[TypeDB Studio] and xref:{page-version}@new_home::get-typedb/console-cli.adoc[TypeDB Console] and the command-line **TypeDB Console**.
 It can also be used programmatically with performant **gRPC-based drivers** in various languages, or directly via its **HTTP API**.
 
-TypeDB is **open-source** and available as a free Community Edition, or in **TypeDB Cloud**, where upgrades, backups, and security are fully managed.
+TypeDB is **open-source** and available as a free Community Edition, or in https://cloud.typedb.com[TypeDB Cloud], where upgrades, backups, and security are fully managed.
 TypeDB Enterprise is also available for on-premise deployments.
 
 == Key Concepts
@@ -22,7 +22,7 @@ TypeDB is a unique database that brings together ideas from programming language
 
 === Strongly-Typed
 
-In TypeDB, you write your schema by creating types - a very familiar idea to programmers who regularly define classes or structs!
+In TypeDB, you write your schema by creating **types** - a very familiar idea to programmers who regularly define classes or structs!
 
 Every piece of data inserted into the database has a specific type from the schema. 
 This isn't just about data types like "string" or "integer". 
@@ -50,9 +50,10 @@ define
   attribute address, value string;
 ----
 
-Just like in strongly-typed programming languages, the system can now understand and validate structure, and even perform optimizations based on typing information.
+The system can now understand and validate queries more deeply,
+and even perform optimizations based on typing information - just like in a strongly typed programming language.
 
-In the end, the same requirements that make developers choose TypeScript over JavaScript, or decide to add typing to a Python codebase, 
+In the end, the same requirements that lead to using TypeScript over JavaScript, or adding typing to a Python codebase,
 exist in the data layer as well: **correctness, performance, and maintainability**.
 With TypeDB, you get a database that is designed to tackle those problems in an intuitive, modern way.
 
@@ -83,6 +84,6 @@ Transactions are used to both read and write data, or even make changes to your 
 
 == What's Next
 
-Read more about why developers xref:{page-version}@new_home::introduction/why-typedb.adoc[choose TypeDB], or jump straight into our xref:{page-version}@new_home::quickstart/setup.adoc[quickstart].
+Read more about why developers xref:{page-version}@new_home::introduction/why-typedb.adoc[choose TypeDB] (and some more features!), or jump straight into our xref:{page-version}@new_home::quickstart/setup.adoc[quickstart].
 
 If you're trying to learn TypeDB from the ground up or figure out how to best navigate these docs, we recommend reading our xref:{page-version}@new_home::learning_journey.adoc[learning journey].

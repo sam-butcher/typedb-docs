@@ -1,7 +1,7 @@
 = Learning journey
 
 Welcome to our guide on how to best leverage these docs for learning TypeDB and TypeQL. 
-This learning journey is designed to take you from being a complete beginner to a advanced user through a structured learning journey.
+It is designed to take you from being a beginner to an advanced user through a structured learning journey.
 
 But don't feel the need to stick to our flow! 
 Jump between sections based on your immediate needs and come back to fill in gaps as you grow more experienced with TypeDB.
@@ -25,15 +25,15 @@ This will teach you all the basics of TypeDB and TypeQL.
 
 == Step 4: Examples
 
-If you like to start by learning from examples, check out the pre-built xref:{page-version}@new_examples::index.adoc[examples].
+Explore some pre-built xref:{page-version}@new_examples::index.adoc[examples].
 
-These include simple end-to-end examples of frontend+backend+database stacks, a direct webapp+database stack,
+These include simple end-to-end examples of a traditional frontend & backend & database, a web app & database stack,
 and also specific TypeDB schemas and queries applied to industry use-cases.
 
 As you go through those examples we recommend having the Core Concepts open (see next section).
 
 Some developers like to start with Concepts first, then look at examples, in which case
-follow Step 5 and come back to Step 4!
+skip to the next section and come back to the examples afterward!
 
 == Step 5: Core concepts
 
@@ -46,17 +46,16 @@ There are approximately 3 major parts to understanding TypeDB:
 === TypeDB
 
 TypeDB server implements database and user management, authentication and connection protocols, transactions, and 
-handles queries. These are independent of the query language or the driver APIs.
+query execution. These are APIs are largely independent of the query language or the driver APIs.
 
 Start at the xref:{page-version}@new_core_concepts::typedb/overview.adoc[TypeDB Overview] to learn about the TypeDB server.
 
 === TypeQL
 
-To fully understand how to "think in TypeQL", we recommend starting at the
-xref:{page-version}@new_core_concepts::typeql/overview.adoc[TypeQL Overview].
+Understanding how to "think in TypeQL", is the key part of using TypeDB effectively and at full power.
 
-This part of the documentation is designed to give you an understanding of the data model,
-and how to query it effectively.
+The xref:{page-version}@new_core_concepts::typeql/overview.adoc[TypeQL Overview],
+shows the building blocks of the language and how they interact, from types to queries to functions.
 
 === TypeDB drivers
 
@@ -67,16 +66,16 @@ are described at the xref:{page-version}@new_core_concepts::drivers/overview.ado
 
 == Step 6: Building your application
 
-At this point you should have enough conceptual and practical knowledge of TypeDB, and its use cases, to build
-your PoC or even a start building a production application!
+At this point you should have enough conceptual and practical knowledge of TypeDB to build
+your proof-of-concept, or even a start building a production application!
 
 In this building phase you will probably need to refer to any of the xref:{page-version}@new_reference::index.adoc[Reference] pages, 
-which are designed to be descriptions of the all the different features of TypeDB, TypeQL, the protocol and drivers,
+which are descriptions of the all the different features of TypeDB, TypeQL, the protocol and drivers,
 and libraries.
 
 == Step 7: Operations
 
-The xref:{page-version}@new_maintenance_operation::index.adoc[Operations] pages are very useful for figuring out backups, upgrades, configurations, and much more.
+The xref:{page-version}@new_maintenance_operation::index.adoc[Operations] pages are for learning about backups, upgrades, configurations, and much more.
 
 In addition, it could be useful to learn about automating TypeDB Cloud operations with the xref:{page-version}@new_tools::typedb-cloud-api.adoc[TypeDB Cloud API].
 For example, you might want to integrate TypeDB Cloud into your deployment pipelines to spin up and down instances of TypeDB automatically.
@@ -85,6 +84,6 @@ For example, you might want to integrate TypeDB Cloud into your deployment pipel
 == Tips
 
 * **Start Small**: Begin with the quickstart to see immediate results
-* **Join the Community**: Engage with other TypeDB users for support and insights on [our Discord server](https://discord.com/invite/typedb). We're very active and welcoming to new members and love to hear about your project!
-* **Contribute**: If you see any issues, or have ideas for how TypeDB can be even better, feel free to reach out or file an issue on [Github](https://github.com/typedb/typedb)
+* **Join the Community**: Engage with other TypeDB users for support and insights on https://discord.com/invite/typedb[our Discord server]. We're very active and welcoming to new members and love to hear about your project!
+* **Contribute**: If you see any issues, or have ideas for how TypeDB can be even better, feel free to reach out or file an issue on https://github.com/typedb/typedb[Github]
 
