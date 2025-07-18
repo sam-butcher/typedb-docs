@@ -8,4 +8,4 @@
 
 * xref:{page-version}@new_reference::cloud-http-api.adoc[]
 
-* xref:{page-version}@new_reference::typeql/index.adoc[]
+include::{page-version}@new_reference::partial$typeql/nav.adoc[]
